@@ -1,0 +1,19 @@
+.common {
+    font-size: 70px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.common:disabled {
+    opacity: 0.4;
+    cursor: initial;
+}
+
+.aqua {
+    color: rgba(24, 17, 35, 0.8);
+    background-color: skyblue;
+}
+

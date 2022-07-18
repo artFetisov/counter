@@ -1,0 +1,48 @@
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.counter {
+    width: 30%;
+    height: 350px;
+    border: 4px solid skyblue;
+    border-radius: 10px;
+}
+
+.numField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    height: calc(50% - 20px);
+    border-radius: 10px;
+    background-color: skyblue;
+}
+
+.number {
+    font-size: 70px;
+    font-weight: bold;
+    color: rgba(24, 17, 35, 0.8);
+}
+
+.numRed {
+    color: red;
+    font-size: 90px;
+}
+
+
+.btnWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 4px solid skyblue;
+    border-radius: 10px;
+    margin: 20px;
+    height: calc(50% - 90px);
+    padding: 20px;
+}
