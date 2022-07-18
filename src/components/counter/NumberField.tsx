@@ -1,5 +1,6 @@
 import {FC} from "react";
-import styles from './Counter.module.css'
+import styles from './Counter.module.scss'
+import cn from 'classnames'
 
 interface INumberField {
     counter: number
@@ -9,6 +10,8 @@ interface INumberField {
 
 export const NumberField: FC<INumberField> = ({counter, maxValue}) => {
     return <div className={styles.numField}>
-        <span className={`${styles.number} ${counter === maxValue ? styles.numRed : ''}`}>{counter}</span>
+        <span className={cn(styles.number, {
+            [styles.numRed]: counter === maxValue
+        })}>{counter}</span>
     </div>
 }

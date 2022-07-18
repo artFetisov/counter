@@ -1,5 +1,6 @@
 import {FC, ButtonHTMLAttributes, DetailedHTMLProps} from "react";
-import styles from './Button.module.css'
+import styles from './Button.module.scss'
+import cn from 'classnames'
 
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
@@ -15,5 +16,7 @@ export const Button: FC<IButtonProps> = (
         ...rest
     }
 ) => {
-    return <button className={`${styles.common} ${aqua ? styles.aqua : ''} `} {...rest}>{children}</button>
+    return <button className={cn(styles.common, {
+        [styles.aqua]: aqua
+    })} {...rest}>{children}</button>
 }

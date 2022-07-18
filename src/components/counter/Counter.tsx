@@ -1,5 +1,5 @@
 import {FC, useState} from "react";
-import styles from './Counter.module.css'
+import styles from './Counter.module.scss'
 import {NumberField} from "./NumberField";
 import {ButtonsField} from "./ButtonsField";
 

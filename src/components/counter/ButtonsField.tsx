@@ -1,5 +1,5 @@
 import {FC} from "react";
-import styles from './Counter.module.css'
+import styles from './Counter.module.scss'
 import {Button} from "../ui/button/Button";
 
 interface IButtonsField {

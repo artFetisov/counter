@@ -1,0 +1,23 @@
+@import './src/styles/_variables';
+
+.common {
+  font-size: 70px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0 20px;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: initial;
+  }
+
+  &.aqua {
+    color: $base-color;
+    background-color: $base-aqua;
+  }
+}
+
+
+
