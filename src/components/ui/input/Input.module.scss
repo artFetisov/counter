@@ -1,0 +1,18 @@
+@import './src/styles/_variables.scss';
+
+.inpNum {
+  border: 4px solid $base-aqua;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.inpNum:focus {
+  outline: none;
+}
+
+.error {
+  border: 4px solid red;
+}
+
+

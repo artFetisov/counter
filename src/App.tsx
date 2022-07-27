@@ -1,10 +1,8 @@
 import React from 'react';
-import {Counter} from "./components/counter/Counter";
+import {CounterContainer} from "./components/counter/CounterContainer";
 
 function App() {
-    return (
-        <Counter/>
-    );
+    return <CounterContainer/>
 }
 
 export default App;

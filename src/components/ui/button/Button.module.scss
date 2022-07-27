@@ -8,15 +8,23 @@
   cursor: pointer;
   padding: 0 20px;
 
+  &:active {
+    transition: transform .2s ease;
+    transform: scale(0.90);
+  }
+
   &:disabled {
+    transform: none;
     opacity: 0.4;
     cursor: initial;
   }
-
+  
   &.aqua {
     color: $base-color;
     background-color: $base-aqua;
   }
+
+
 }
 
 
