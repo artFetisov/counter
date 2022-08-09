@@ -2,15 +2,12 @@ import {FC} from "react";
 import styles from './Counter.module.scss'
 import cn from 'classnames'
 import {errors, isErrorMes} from "../../utils/errors";
+import {useSelector} from "react-redux";
+import {AppRootState} from "../../store";
+import {ICounterState} from "../../store/reducers/counter/types";
 
-interface INumberField {
-    counter: number
-    maxValue: number
-    startValue: number
-    isDirty: boolean
-}
-
-export const NumberField: FC<INumberField> = ({counter, maxValue, startValue, isDirty}) => {
+export const NumberField: FC = () => {
+    const {maxValue, startValue, counter, isDirty} = useSelector<AppRootState, ICounterState>(state => state.counter)
 
     const finalMessage = errors(startValue, maxValue)
 

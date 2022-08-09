@@ -1,33 +1,24 @@
 import {ChangeEvent, FC} from "react";
 import styles from '../Counter.module.scss'
 import {NumberInput} from "../../ui/input/NumberInput";
-import { isErrorInputMax, isErrorInputStart} from "../../../utils/errors";
+import {isErrorInputMax, isErrorInputStart} from "../../../utils/errors";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootState} from "../../../store";
+import {ICounterState} from "../../../store/reducers/counter/types";
+import {CounterActionCreators} from "../../../store/reducers/counter/action-creators";
 
-interface IRangeFieldProps {
-    maxValue: number
-    startValue: number
-    setMaxValue: (value: number) => void
-    setStartValue: (value: number) => void
-    setIsDirty: (value: boolean) => void
-}
-
-export const RangeField: FC<IRangeFieldProps> = (
-    {
-        maxValue,
-        startValue,
-        setMaxValue,
-        setStartValue,
-        setIsDirty
-    }) => {
+export const RangeField: FC = () => {
+    const dispatch = useDispatch()
+    const {maxValue, startValue} = useSelector<AppRootState, ICounterState>(state => state.counter)
 
     function onChangeMaxValueHandler(e: ChangeEvent<HTMLInputElement>) {
-        setMaxValue(Number(e.currentTarget.value))
-        setIsDirty(true)
+        dispatch(CounterActionCreators.setMaxValue(Number(e.currentTarget.value)))
+        dispatch(CounterActionCreators.setIsDirty(true))
     }
 
     function onChangeStartValueHandler(e: ChangeEvent<HTMLInputElement>) {
-        setStartValue(Number(e.currentTarget.value))
-        setIsDirty(true)
+        dispatch(CounterActionCreators.setStartValue(Number(e.currentTarget.value)))
+        dispatch(CounterActionCreators.setIsDirty(true))
     }
 
     return <div className={styles.rangeField}>
