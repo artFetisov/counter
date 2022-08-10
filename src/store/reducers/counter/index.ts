@@ -1,7 +1,7 @@
 import {CounterActions, CounterEnumAction, ICounterState} from "./types";
 
 const initialState: ICounterState = {
-    maxValue: 0,
+    maxValue: 3,
     startValue: 0,
     counter: 0,
     isDirty: false

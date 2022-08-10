@@ -7,14 +7,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootState} from "../../../store";
 import {ICounterState} from "../../../store/reducers/counter/types";
 import {CounterActionCreators} from "../../../store/reducers/counter/action-creators";
+import {savetoLocalStorage} from "../../../utils/localStorage";
 
 export const RangeCalculator: FC = () => {
     const dispatch = useDispatch()
     const {maxValue, startValue, isDirty} = useSelector<AppRootState, ICounterState>(state => state.counter)
 
     function setItemsToLocalStorage() {
-        localStorage.setItem('maxValue', JSON.stringify(maxValue))
-        localStorage.setItem('startValue', JSON.stringify(startValue))
+        savetoLocalStorage('maxValue', maxValue)
+        savetoLocalStorage('startValue', startValue)
         dispatch(CounterActionCreators.setCounter(startValue))
         dispatch(CounterActionCreators.setIsDirty(false))
     }
